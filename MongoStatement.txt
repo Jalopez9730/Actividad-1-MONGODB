@@ -1,4 +1,4 @@
-db.CreateCollection("Equipos")
+db.createCollection("Equipos")
 
 db.Equipos.insertMany([
 
@@ -16,11 +16,11 @@ db.Equipos.insertMany([
   coach_id: 23,
   jugadores_id: 24
   
-},
+}
 ]
 )
 
-db.CreateCollection("Jugadores")
+db.createCollection("Jugadores")
 
 db.Jugadores.insertMany([
 {
@@ -133,7 +133,7 @@ db.Jugadores.insertMany([
 }])
 
 
-db.CreateCollection("Coach")
+db.createCollection("Coach")
 
 db.Coach.insertMany([
 
@@ -156,7 +156,7 @@ db.Coach.insertMany([
 
 
 
-db.CreateCollection("Arbitros")
+db.createCollection("Arbitros")
 
 db.Arbitros.insertOne({
   _id: 15,
@@ -166,14 +166,14 @@ db.Arbitros.insertOne({
   Experiencia: '9 años'
 })
 
-db.CreateCollection("Partidos")
+db.createCollection("Partidos")
 
 db.Partidos.insertOne(
 {
   _id: 16,
   equipolocal_id: 12,
   equipoVisitante_id: 12,
-  fecha: new Date(2024-07-14T04:00:00.000),
+  fecha: new Date(2024-07-14),
   Arbitros_id: 15,
   Marcador: {
     goles_loca: 0,
@@ -184,12 +184,12 @@ db.Partidos.insertOne(
 )
 
 
-db.CreateCollection("TablaPosiciones")
+db.createCollection("TablaPosiciones")
 
 db.TablaPosiciones.insertOne(
 {
   _id: 17,
-  equipos_id: [Equipo1_id: 12, Equipo2_id: 22],
+  equipos_id: {Equipo1_id: 12, Equipo2_id: 22},
   puntos: 7,
   partidos_jugados: 3,
   partidos_ganados: 2,

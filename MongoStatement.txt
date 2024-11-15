@@ -1,0 +1,205 @@
+db.CreateCollection("Equipos")
+
+db.Equipos.insertMany([
+
+{
+  _id: 12,
+  Nombre: 'Colombia',
+  coach_id: 13,
+  jugadores_id: 14
+  
+},
+
+{
+  _id: 22,
+  Nombre: 'Argentina',
+  coach_id: 23,
+  jugadores_id: 24
+  
+},
+]
+)
+
+db.CreateCollection("Jugadores")
+
+db.Jugadores.insertMany([
+{
+  _id: 14,
+  Nombre: 'James Rodriguez',
+  edad: 33,
+  nacionalidad: 'Colombia',
+  Posicion: 'delantero',
+  Equipo_ID: 12,
+  goles: 1
+},
+{
+ _id: 15,
+  Nombre: 'Luis Fernando Díaz',
+  edad: 27,
+  nacionalidad: 'Colombia',
+  Posicion: 'delantero',
+  Equipo_ID: 12,
+  goles: 5
+},
+{
+ _id: 16,
+  Nombre: 'Daniel Muñoz',
+  edad: 28,
+  nacionalidad: 'Colombia',
+  Posicion: 'defensa',
+  Equipo_ID: 12,
+  goles: 0
+},
+{
+ _id: 17,
+  Nombre: 'Juan Guillermo Cuadrado',
+  edad: 36 ,
+  nacionalidad: 'Colombia',
+  Posicion: 'delantero',
+  Equipo_ID: 12,
+  goles: 0
+},
+{
+ _id: 18,
+  Nombre: 'Jhon Córdoba',
+  edad: 31,
+  nacionalidad: 'Colombia',
+  Posicion: 'delantero',
+  Equipo_ID: 12,
+  goles: 2
+},
+{
+ _id: 19,
+  Nombre: 'Yerry Mina',
+  edad: 29,
+  nacionalidad: 'Colombia',
+  Posicion: 'defensa',
+  Equipo_ID: 12,
+  goles: 0
+},
+{
+  _id: 20,
+  Nombre: 'Lautaro Martínez',
+  edad: 27,
+  nacionalidad: 'Argentina',
+  Posicion: 'delantero',
+  Equipo_ID: 22,
+  goles: 2
+},
+{
+ _id: 21,
+  Nombre: 'Lionel Messi',
+  edad: 27,
+  nacionalidad: 'Argentina',
+  Posicion: 'delantero',
+  Equipo_ID: 22,
+  goles: 5
+},
+{
+ _id: 22,
+  Nombre: 'Julián Álvarez',
+  edad: 28,
+  nacionalidad: 'Argentina',
+  Posicion: 'defensa',
+  Equipo_ID: 22,
+  goles: 0
+},
+{
+ _id: 23,
+  Nombre: 'Lisandro Martínez',
+  edad: 36 ,
+  nacionalidad: 'Argentina',
+  Posicion: 'delantero',
+  Equipo_ID: 22,
+  goles: 0
+},
+{
+ _id: 24,
+  Nombre: 'Ángel Di María',
+  edad: 31,
+  nacionalidad: 'Argentina',
+  Posicion: 'delantero',
+  Equipo_ID: 22,
+  goles: 2
+},
+{
+ _id: 25,
+  Nombre: 'Rodrigo de Paul',
+  edad: 29,
+  nacionalidad: 'Argentina',
+  Posicion: 'defensa',
+  Equipo_ID: 22,
+  goles: 0
+}])
+
+
+db.CreateCollection("Coach")
+
+db.Coach.insertMany([
+
+{
+  _id: 13,
+  Nombre: 'Nestro Lorenzo',
+  edad: 58,
+  nacionalidad: 'Argentina',
+  Equipo_ID: 12
+}
+,
+{
+  _id: 14,
+  Nombre: 'Lionel Sebastián Scaloni',
+  edad: 46,
+  nacionalidad: 'Argentina',
+  Equipo_ID: 22
+}
+])
+
+
+
+db.CreateCollection("Arbitros")
+
+db.Arbitros.insertOne({
+  _id: 15,
+  nombre: 'Raphael Claus',
+  edad: 45,
+  nacionalidad: 'Brasileño',
+  Experiencia: '9 años'
+})
+
+db.CreateCollection("Partidos")
+
+db.Partidos.insertOne(
+{
+  _id: 16,
+  equipolocal_id: 12,
+  equipoVisitante_id: 12,
+  fecha: new Date(2024-07-14T04:00:00.000),
+  Arbitros_id: 15,
+  Marcador: {
+    goles_loca: 0,
+    goles_visitante: 1
+  },
+  ubicacion: 'USA'
+}
+)
+
+
+db.CreateCollection("TablaPosiciones")
+
+db.TablaPosiciones.insertOne(
+{
+  _id: 17,
+  equipos_id: [Equipo1_id: 12, Equipo2_id: 22],
+  puntos: 7,
+  partidos_jugados: 3,
+  partidos_ganados: 2,
+  partidos_empatados: 1,
+  partidos_perdidos: 0,
+  golesRealizado: 6,
+  golesContra: 2,
+  diferenciaGol: 4
+}
+)
+
+
+
